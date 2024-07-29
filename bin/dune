@@ -1,0 +1,12 @@
+(menhir (modules parser)
+)
+
+(ocamllex lexer)
+
+(executable
+    (name synml)
+    (public_name myth)
+    (libraries core str core_unix core_unix.sys_unix)
+    (preprocess (pps ppx_hash ppx_deriving.std ppx_optcomp ppx_compare ppx_sexp_conv))
+     (flags (:standard -warn-error "-unused-value-declaration"))
+)
